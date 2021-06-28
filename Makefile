@@ -10,10 +10,10 @@ default: build
 clean:
 	rm -f hello
 	rm -f facade
-	rm -f duck-main
+	rm -f strategy-duck-main
 	rm -f *.o
 
-build: hello duck-main facade
+build: hello strategy-duck-main facade
 
 build-hello: hello
 
@@ -22,8 +22,8 @@ build-hello: hello
 
 #tool: tool.o support.o
 #	g++ $(LDFLAGS) -o tool tool.o support.o $(LDLIBS) 
-duck-main: duck-main.o Duck.o Mallard.o Quack.o Squeak.o
-	g++ -o duck-main duck-main.o Duck.o Mallard.o Quack.o Squeak.o
+strategy-duck-main: strategy-duck-main.o Duck.o Mallard.o Quack.o Squeak.o
+	g++ -o strategy-duck-main strategy-duck-main.o Duck.o Mallard.o Quack.o Squeak.o
 
 Duck.o: Duck.cpp Duck.h
 Mallard.o: Mallard.cpp Mallard.h
